@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+    /*remove scroll bar*/
+    overflow: hidden;
+}
+
+.gameContainer {
+    background-color: blue;
+    background-image: url("images/bg.png");
+    background-size: 100vw 100vh;  /*Setting the Size of background*/
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dino {
+    background-image: url(images/dino.png);
+    background-size: cover;
+    width: 233px;
+    height: 114px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+}
+
+.obstacle {
+    background-image: url(images/dragon.png);
+    background-size: cover;
+    width: 166px;
+    height: 114px;
+    position: absolute;
+    bottom: 0;
+    left: 44vw;
+}
+
+.scoreCount {
+    position: absolute;
+    right: 45px;
+    top: 30px;
+    border: 2px solid black;
+    width: 80px;
+    padding: 5px 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+.gameOver {
+    position: relative;
+    top: 50px;
+    font-size: 65px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/*Animate Dino*/
+.animateDino {
+    animation: dino 0.6s linear;
+}
+
+@keyframes dino {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 430px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+
+/*Animate Dragon*/
+.animateDragon {
+    animation: dragonAnima 5s linear infinite;
+}
+
+@keyframes dragonAnima{
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -100vw;
+    }
+}
+
+/* Dino animamtion when game over */
+.brokenImage {
+    animation: dinoBroken 2s linear;
+}
+
+@keyframes dinoBroken{
+    0%{
+        bottom: 0;
+    }
+    100%{
+        bottom: -10vw;
+        visibility: hidden;
+    }
+}
